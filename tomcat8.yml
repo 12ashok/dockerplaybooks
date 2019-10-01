@@ -1,0 +1,13 @@
+---
+- name: install tomcat8 and tomcat8-admin
+  hosts: servers
+  tasks:
+   - name: install tomcat8 and tomcat8-admin
+     apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+     with_items:
+      - tomcat8
+      - tomcat8-admin
+...

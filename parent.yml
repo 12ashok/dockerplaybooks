@@ -1,0 +1,18 @@
+---
+- name: calling child playbooks
+  hosts: devserser
+  tasks:
+   - name: calling 
+     include: "{{item}}"
+     with_items:
+      - downloadjenkins.yml
+      - installjenkins.yml
+- name: tomcat
+  hosts: servers
+  tasks:
+   - name: tomcat8
+     include: "{{item}}"
+     with_items:
+      - tomcat8.yml
+      - tomcat-users.xml
+...

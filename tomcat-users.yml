@@ -1,0 +1,9 @@
+---
+- name: copy tomcat-users.xml
+  hosts: servers
+  tasks:
+   - name: copy file
+     copy:
+      src: tomcat-users.xml
+      dest: /etc/tomcat8
+...
